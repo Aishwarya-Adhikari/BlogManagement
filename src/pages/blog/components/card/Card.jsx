@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div className="max-w-sm  rounded overflow-hidden shadow-lg mb-5  mt-20">
+    <div className="max-w-sm  rounded overflow-hidden shadow-lg mb-5  mt-25">
   <img className="w-full " src="https://img.freepik.com/free-vector/blogging-fun-content-creation-online-streaming-video-blog-young-girl-making-selfie-social-network-sharing-feedback-self-promotion-strategy_335657-2386.jpg " alt="Sunset in the mountains"/>
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">The Coldest Sunset</div>

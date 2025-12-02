@@ -1,24 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
 <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 start-0 w-full z-20 shadow-md">
   
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
-  <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+  <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="https://flowbite.com/docs/images/logo.svg" className="h-7" alt="Flowbite Logo" />
       <span className="self-center text-xl text-white font-semibold whitespace-nowrap">BlogMG</span>
-  </a>
-  <div className="flex items-center md:order-2">
+  </Link>
+  <div className="flex items-center md:order-2 ">
   <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
         <li>
-          <a href="#" className="block py-2 px-3 text-white bg-brand rounded md:bg-transparent  hover:text-blue-700  md:text-fg-brand md:p-0" aria-current="page">Home</a>
+          <Link to="/blog/add" className="block py-2 px-3 text-white bg-brand rounded md:bg-transparent  hover:text-blue-700  md:text-fg-brand md:p-0" aria-current="page">Create Blog</Link>
         </li>
         <li>
-          <a href="#" className="block py-2 px-3 text-white text-heading rounded hover:bg-neutral-tertiary  hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
+          <Link to="/register" className="block py-2 px-3 text-white text-heading rounded hover:bg-neutral-tertiary  hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Register</Link>
         </li>
         <li>
-          <a href="#" className="block py-2 px-3 text-white text-heading rounded hover:bg-neutral-tertiary  hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
+          <Link to="/login" className="block py-2 px-3 text-white text-heading rounded hover:bg-neutral-tertiary  hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Login</Link>
         </li>
       </ul>
     <button data-collapse-toggle="navbar-search" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-search" aria-expanded="false">

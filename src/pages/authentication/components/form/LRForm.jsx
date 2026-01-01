@@ -1,6 +1,24 @@
 import React from 'react'
 
 const LRForm = ({ type }) => {
+	const [data, setData] = useState({
+		email: '',
+		username: '',
+		password: ''
+	});
+
+	const handleChange = (e) => {
+          const {name,value} =e.target
+		  setData({
+			...data,
+			[name] : value
+		  })
+
+	};
+	const handleSubmit = () => {
+
+	}
+
   return (
     <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
 	<div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -15,31 +33,33 @@ const LRForm = ({ type }) => {
                         { type==='Login' ? 'Login to your account' : 'Register your account' }
                     </h1>
 				</div>
+				<form onSubmit={handleSubmit}>
 				<div class="divide-y divide-gray-200">
 					<div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
 						<div class="relative">
-							<input autocomplete="off" id="email" name="email" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Email address" />
-							<label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
+							<input autoComplete="off" id="email" name="email" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Email address" onChange={handleChange} />
+							<label htmlFor="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
 						</div>
                        {/*using props here*/}
                         {
                             type==='Register' && (
                                 <div class="relative">
-							<input autocomplete="off" id="username" name="username" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Username" />
-							<label for="username" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Username</label>
+							<input autoComplete="off" id="username" name="username" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Username" onChange={handleChange} />
+							<label htmlFor="username" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Username</label>
 						</div>
                             )
                         }
 
 						<div class="relative">
-							<input autocomplete="off" id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
-							<label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
+							<input autoComplete="off" id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Password" onChange={handleChange} />
+							<label htmlFor="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
 						</div>
 						<div class="relative">
 							<button class="bg-blue-500 text-white rounded-md px-2 py-1">Submit</button>
 						</div>
 					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
